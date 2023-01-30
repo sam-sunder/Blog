@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Blog</title>
+        <link rel="stylesheet" href="{% static 'css/tailwind.css' %}">
+	</head>
+	<body>
+		<!-- NAVIGATION -->
+		<nav class="bg-white border-gray-200 px-2 sm:px-4 py-2 rounded dark:bg-gray-900">
+			<div class="container flex flex-wrap items-center justify-between mx-auto">
+				<a href="https://flowbite.com/" class="flex items-center">
+					<!-- <img
+						src="https://flowbite.com/docs/images/logo.sv"
+						class="h-6 mr-3 sm:h-9"
+						alt="" /> -->
+					<span
+						class="self-center font-serif text-xl font-semibold whitespace-nowrap dark:text-white"
+						>Blog</span
+					>
+				</a>
+				<div class="flex md:order-2">
+					<button
+						type="button"
+						class="btn-black">
+						Contact us
+					</button>
+					<button
+						data-collapse-toggle="navbar-cta"
+						type="button"
+						class="inline-flex items-center p-2  text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+						aria-controls="navbar-cta"
+						aria-expanded="false">
+						<span class="sr-only">Open main menu</span>
+						<svg
+							class="w-6 h-6"
+							aria-hidden="true"
+							fill="currentColor"
+							viewBox="0 0 20 20"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								fill-rule="evenodd"
+								d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+								clip-rule="evenodd"></path>
+						</svg>
+					</button>
+				</div>
+				<div
+					class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+					id="navbar-cta">
+					<ul
+						class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:font-sans md:text-black md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+						<li>
+							<a href="/" class="nav-link active">Home</a>
+						</li>
+						<!-- <li>
+							<a href="#" class="nav-link">Services</a>
+						</li>
+						<li>
+							<a href="#" class="nav-link">About</a>
+						</li>
+						<li>
+							<a href="#" class="nav-link">Contact</a>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="w-full h-[1px] bg-gray-600"></div>
+        <!-- END NAVIGATION -->
+		<!-- MAIN SECTION -->
+		<!-- <div class="mt-8">
+			<div class="h-[1px] bg-gray-400 mx-10 my-2 relative">
+				<p class="font-bold ml-2 absolute -top-3 bg-white z-10 px-1">Latest posts</p>
+			</div>
+		</div> -->
+		<div class="grid md:grid-cols-2 gap-10 mx-5 my-10 md:mx-10 max-w-7xl xl:mx-auto">
+			<div class="group cursor-pointer" onclick="window.location.href= '/blog/1';">
+				<div class="w-full h-64 rounded-lg transition-shadow duration-300 group-hover:shadow-[5px_5px_0px_0px_black] border border-black shadow-black">
+					<div class="flex justify-center items-center w-full h-full">
+						<img src="{% static 'img/tailwind+django.png' %}" alt="" class="max-h-64 block m-auto object-contain p-4 max-w-lg">
+					</div>
+				</div>
+				<div class="my-2 mx-auto z-10 bg-white">
+					<div class="flex pt-4 space-x-1 text-sm text-gray-500">
+						<time datetime="2020-03-10"> Mar 10, 2020 </time>
+						<span aria-hidden="true"> · </span>
+						<span> 4 min read </span>
+					</div>
+					<h2 class="font-serif font-bold text-2xl pt-1 underline">Using Tailwind css with Django Web framework.</h2>
+					<p class="text-slate-800 py-2 font-normal">TailwindCSS is now became a popular css library. it made writing classes very easy and it is also very powerful. You can use it in your projects and you will get the best out of it. It is a great tool to use for coder's who need to make their cms more attractive. I hope you find it useful</p>
+				</div>
+			</div>
+			<div class="grid md:grid-rows-2 gap-4">
+				<div class="flex group border rounded-md border-black h-max cursor-pointer transition-all duration-200 ease-in-out hover:shadow-[-5px_5px_0px_0px_black]">
+					<div class="flex-shrink-0 w-[30%] md:w-[calc(100% - 70%)]">
+						<img class="max-w-lg w-full h-full border-r border-black rounded-l-md" src="https://picsum.photos/900" alt="text">
+					</div>
+					<div class="p-4">
+						<span class="text-sm text-gray-500">Coming soon</span>
+						<p class="mt-1 text-lg leading-6 font-serif group-hover:underline font-bold">
+							<a href="./blog-post.html" class="text-xl text-gray-800 hover:text-gray-500">Creating Navbar with tailwind css</a>
+						</p>
+						<p class="mt-2 text leading-normal text-gray-500 b-desc">{% lorem 30 w %}</p>
+					</div>
+				</div>
+				<div class="flex group border rounded-md border-black h-max cursor-pointer transition-all duration-200 ease-in-out hover:shadow-[-5px_5px_0px_0px_black]">
+					<div class="flex-shrink-0 w-[30%] md:w-[calc(100% - 70%)]">
+						<img class="max-w-lg w-full h-full border-r border-black rounded-l-md" src="https://picsum.photos/300" alt="text">
+					</div>
+					<div class="p-4">
+						<span class="text-sm text-gray-500">Coming soon</span>
+						<p class="mt-1 text-lg leading-6 font-serif group-hover:underline font-bold">
+							<a href="./blog-post.html" class="text-xl text-gray-800 hover:text-gray-500">5 tips to go from boring to extraordinary </a>
+						</p>
+						<p class="mt-2 text leading-normal text-gray-500 b-desc">{% lorem 30 w %}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END MAIN -->
+		<script src="{% static 'js/clamp.min.js' %}"></script>
+		<script>
+			for (let i = 0; i < document.getElementsByClassName("b-desc").length; i++) {
+				$clamp(document.getElementsByClassName("b-desc")[i], {clamp: 4})
+			}
+		</script>
+	</body>
+</html>

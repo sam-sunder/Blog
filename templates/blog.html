@@ -1,0 +1,316 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Using Tailwind Css With Django Web Framework. | SolmanRaj Blogs</title>
+		<link rel="stylesheet" href="{% static 'css/tailwind.css' %}" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+		<meta name="description" content="This tutorial teaches about how to use tailwind css with django framework">
+		<meta name="keywords" content="Django, Django tutorials, Tailwind css, Tailwind, Css, Python, Python tutorials">
+		<meta name="author" content="Sam Sunder Cheekati">
+		<meta property="og:url" content="https://blog.solmanraj.com/blog/1" />
+		<meta property="og:title" content="Using Tailwind Css With Django Web Framework." />
+		<meta property="og:image" content="{% static 'images/tailwind+django.png' %}" />
+		<meta property="og:image:alt" content="Tailwind css and django" />
+		<script type="application/ld+json">
+			{
+			  "@context": "https://schema.org",
+			  "@type": "Article",
+			  "mainEntityOfPage": {
+				"@type": "WebPage",
+				"@id": "http://blog.solmanraj.com/blog/1"
+			  },
+			  "headline": "Using Tailwind Css With Django Web Framework.",
+			  "description": "This tutorial teaches about how to use tailwind css with django framework",
+			  "image": "http://blog.solmanraj.com/static/img/tailwind%2Bdjango.png",  
+			  "author": {
+				"@type": "Person",
+				"name": "Sam sunder"
+			  },  
+			  "publisher": {
+				"@type": "Organization",
+				"name": "",
+				"logo": {
+				  "@type": "ImageObject",
+				  "url": ""
+				}
+			  },
+			  "datePublished": "2023-01-30",
+			  "dateModified": "2023-01-30"
+			}
+		</script>
+	</head>
+	<body>
+		<!-- NAVIGATION -->		  
+		<nav class="bg-white border-gray-200 px-6 lg:px-8 py-2 rounded dark:bg-gray-900">
+			<div class="container flex flex-wrap items-center justify-between mx-auto max-w-7xl">
+				<a href="/" class="flex items-center">
+					<span
+						class="self-center font-serif text-xl font-semibold whitespace-nowrap dark:text-white"
+						>SolmanRaj</span
+					>
+				</a>
+				<div class="flex md:order-2">
+					<button type="button" class="btn-black">Contact us</button>
+					<button
+						data-collapse-toggle="navbar-cta"
+						type="button"
+						class="inline-flex items-center p-2 text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+						aria-controls="navbar-cta"
+						aria-expanded="false">
+						<span class="sr-only">Open main menu</span>
+						<svg
+							class="w-6 h-6"
+							aria-hidden="true"
+							fill="currentColor"
+							viewBox="0 0 20 20"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								fill-rule="evenodd"
+								d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+								clip-rule="evenodd"></path>
+						</svg>
+					</button>
+				</div>
+				<div
+					class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+					id="navbar-cta">
+					<ul
+						class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:font-sans md:text-black md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+						<li>
+							<a href="/" class="nav-link active">Home</a>
+						</li>
+						<!-- <li>
+							<a href="#" class="nav-link">Services</a>
+						</li>
+						<li>
+							<a href="#" class="nav-link">About</a>
+						</li>
+						<li>
+							<a href="#" class="nav-link">Contact</a>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="w-full h-[1px] bg-gray-600"></div>
+		<!-- END NAVIGATION -->
+		<!-- MAIN SECTION -->
+		<div class="grid grid-cols-2 md:grid-cols-3 m-10 max-w-[90rem] mx-auto">
+			<div class="col-span-2 flex flex-col px-4 mx-6">
+				<!-- BLOG TITTLE -->
+				<h1 class="font-serif text-4xl font-bold capitalize">
+					Using Tailwind css with Django Web framework.
+				</h1>
+				<div class="py-2 space-x-1 text-xl text-gray-500">
+					<time datetime="2020-03-10"> Mar 10, 2020 </time>
+					<span aria-hidden="true"> · </span>
+					<span> 4 min read </span>
+					<span aria-hidden="true"> · </span>
+					<span> Sam sunder ch </span>
+				</div>
+				<!-- BLOG DESCRIPTION -->
+				<p class="text-slate-700 text-2xl">
+					Learn how to use tailwind css with django a popular python web framework.
+				</p>
+				<!-- BLOG IMAGE -->
+				<img
+					src="{% static 'img/tailwind+django.png' %}"
+					alt=""
+					class="w-full h-auto shadow-[-5px_5px_0px_0px_black] border border-black my-6 max-w-5xl aspect-video object-contain" />
+				<!-- BLOG STARTS HERE -->
+				<div class="my-6">
+					<p class="b-body">
+						<span class="font-bold">Django </span> is an open-source web framework for building web applications in Python. It follows
+						the model-view-controller architectural pattern and is widely
+						used by many popular websites like Instagram, Spotify, etc.
+						<br>
+						This tutorial will help you to use tailwind css with django.
+						<br>
+					</p>
+					<p class="b-subhead p-link">Setup a django project</p>
+					<p class="b-body">
+						Let's get started by creating a new django project.
+						Make sure you have installed <span class="font-bold underline">Python</span> and <span class="font-bold underline">Node.js</span>.
+						Now let's install django by running the following command in terminal.
+					</p>
+					<div class="b-code">pip install django</div>
+					<p class="b-body">
+						Now create a django project called <span class="b-code-txt">my_project</span>, Run the following command to create our project
+					</p>
+					<div class="b-code">django-admin startproject my_project</div>
+					<p class="b-body">
+						For HTML files create a folder called <span class="b-code-txt">templates/</span>, now add the created dir in settings.py file which is created in django project 
+						<span class="b-code-txt">my_project/my_project/settings.py</span>:
+					</p>
+					<div class="b-code whitespace-pre-wrap" data-lang="python">TEMPLATES = [
+							{
+								...
+								'DIRS': ['templates'],
+								...
+							},
+						]
+					</div>
+					<p class="b-body">Create a folder <span class="b-code-txt">static</span> for css, js files and a line in <span class="b-code-txt">my_project/my_project/settings.py</span>:</p>
+					<div class="b-code" data-lang="python">STATIC_URL = '/static/'
+						STATICFILES_DIRS = [Path.joinpath(BASE_DIR, 'static')]
+					</div>
+					<div class="b-subhead  p-link">Setting up tailwind css</div>
+					<p class="b-body">Create a folder <span class="b-code-txt">npmMods</span> and install tailwindcss by running the following commands:</p>
+					<div class="b-code">npm install -D tailwindcss
+						npx tailwindcss init
+					</div>
+					<p class="b-body">Your directory structure should look like this:</p>
+					<div class="b-code">my_folder/
+						├─ my_project/
+						│ └─ my_project/
+						│     ├── __init__.py
+						│     ├── asgi.py
+						│     ├── settings.py
+						│     ├── urls.py
+						│     └── wsgi.py
+						├─ templates
+						├─ static
+						└─ npmMods/
+							├─ node_modules
+							└─ tailwind.config.js
+					</div>
+					<p class="b-body">Now we need to add our html file's location in <span class="b-code-txt">content</span> variable in <span class="b-code-txt">tailwind.config.js</span></p>
+					<div class="b-code" data-lang="js">/** @type {import('tailwindcss').Config} */
+						module.exports = {
+						content: ['../my_project/templates/**/*.html'],
+						theme: {
+							...
+						},
+						plugins: [],
+						}
+					</div>
+					<p class="b-body">Create a file <span class="b-code-txt">input.css</span> under <span class="b-code-txt">npmMods/src</span> directory.</p>
+					<div class="b-code">npmMods/
+						├── node_modules/
+						├── tailwind.config.js
+						└── src/
+							└── input.css
+					</div>
+					<p class="b-body">Import tailwind css directives for each of Tailwind's layers to your main CSS file.</p>
+					<div class="b-code" data-lang="css">@tailwind base;
+						@tailwind components;
+						@tailwind utilities;
+					</div>
+					<p class="b-body">Run the following command in npmMods directory it scans your templates and all your classes in it and generates main <span class="b-code-txt">tailwind.css</span>.</p>
+					<div class="b-code">npx tailwindcss -i ./src/input.css -o ../my_project/static/css/tailwind.css --watch</div>
+					<p class="b-body">Make sure that tailwind.css file is created in your static folder</p>
+					<div class="b-code">my_project/
+						├── my_project/
+						├── templates
+						├── static/
+						    └─ css/
+						        └─ tailwind.css
+					</div>
+					<div class="b-subhead p-link">Start using tailwind css</div>
+					<p class="b-body">You can now use tailwind css inyou template by including tailwind.css static file in the head section. Let's see an example</p>
+					<div class="b-code" data-lang="html">{% verbatim %}{% load static %}{% endverbatim %}
+						&lt;!DOCTYPE html&gt;
+						&lt;html lang=&quot;en&quot;&gt;
+							&lt;head&gt;
+								&lt;meta charset=&quot;UTF-8&quot; /&gt;
+								&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot; /&gt;
+								&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+								&lt;title&gt;Tailwind + Django&lt;/title&gt;
+								&lt;link rel=&quot;stylesheet&quot; href=&quot;{% static 'css/tailwind.css' %}&quot;&gt;
+							&lt;/head&gt;
+							&lt;body&gt;
+								&lt;div class=&quot;flex h-screen items-center justify-center bg-indigo-50 px-4&quot;&gt;
+									&lt;div class=&quot;max-w-sm overflow-hidden rounded-xl bg-white shadow-md duration-200 hover:scale-105 hover:shadow-xl&quot;&gt;
+										&lt;img src=&quot;https://picsum.photos/300/150&quot; alt=&quot;plant&quot; class=&quot;h-auto w-full&quot; /&gt;
+										&lt;div class=&quot;p-5&quot;&gt;
+											&lt;p class=&quot;text-medium mb-5 text-gray-700&quot;&gt;Well, aren&#39;t you going up to the lake tonight, you&#39;ve been planning it for two weeks.&lt;/p&gt;
+											&lt;button class=&quot;w-full rounded-md bg-indigo-600  py-2 text-indigo-100 hover:bg-indigo-500 hover:shadow-md duration-75&quot;&gt;See More&lt;/button&gt;
+										&lt;/div&gt;
+									&lt;/div&gt;
+								&lt;/div&gt;
+							&lt;/body&gt;
+						&lt;/html&gt;
+					</div>
+					<p class="b-body">Output:</p>
+					</body>
+					<div class="w-white max-h-96 overflow-auto">
+						<div class="flex h-full p-5 items-center justify-center bg-indigo-50 px-4">
+							<div class="max-w-sm overflow-hidden rounded-xl bg-white shadow-md duration-200 hover:scale-105 hover:shadow-xl">
+								<img src="https://picsum.photos/300/150" alt="plant" class="h-auto w-full" />
+								<div class="p-5">
+									<p class="text-medium mb-5 text-gray-700">Well, aren't you going up to the lake tonight, you've been planning it for two weeks.</p>
+									<button class="w-full rounded-md bg-indigo-600  py-2 text-indigo-100 hover:bg-indigo-500 hover:shadow-md duration-75">See More</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr class="mt-10">
+					<p class="b-subhead" id="#atuhor-card">Written By:</p>
+					<div class="border border-black p-4 flex gap-8 shadow-[10px_10px_0px_0px_black] flex-col md:flex-row">
+						<div class="flex-shrink-0 w-full mb-6 h-44 sm:h-[300px] md:h-32 sm:w-32 sm:mb-0">
+							<img src="{% static 'img/sam-profile.jpg' %}" alt="" class="object-contain w-full h-full rounded">
+						</div>
+						<div class="flex flex-col">
+							<div>
+								<h2 class="text-2xl font-semibold capitalize">Sam sunder ch</h2>
+								<span class="dark:text-gray-400">Student</span>
+							</div>
+							<div class="space-y-1 mt-1">
+								<span class="flex items-center space-x-2">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-label="Email address" class="w-4 h-4">
+										<path fill="currentColor" d="M274.6,25.623a32.006,32.006,0,0,0-37.2,0L16,183.766V496H496V183.766ZM464,402.693,339.97,322.96,464,226.492ZM256,51.662,454.429,193.4,311.434,304.615,256,268.979l-55.434,35.636L57.571,193.4ZM48,226.492,172.03,322.96,48,402.693ZM464,464H48V440.735L256,307.021,464,440.735Z"></path>
+									</svg>
+									<a href="mailto:samsunderch@gmail.com" class="underline">samsunderch@gmail.com</a>
+								</span>
+								<span class="flex items-center space-x-2">
+									<a rel="noopener noreferrer" href="https://github.com/sam-sunder" aria-label="GitHub" class="p-2 pl-0 rounded-md dark:text-gray-100 hover:dark:text-violet-400">
+										<svg viewBox="0 0 496 512" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current">
+											<path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path>
+										</svg>
+									</a>
+									<a rel="noopener noreferrer" href="https://instagram.com/sam_sunder_ch" aria-label="Instagram" class="p-2 rounded-md dark:text-gray-100 hover:dark:text-violet-400">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="w-5 h-5 fill-current">
+											<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+										</svg>
+									</a>
+									<a rel="noopener noreferrer" href="https://www.facebook.com/ch.samsunder" aria-label="Facebook" class="p-2 rounded-md dark:text-gray-100 hover:dark:text-violet-400">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="w-5 h-5 fill-current">
+											<path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+										</svg>
+									</a>
+								</span>
+							</div>
+						</div>					
+					</div>
+				</div>
+			</div>
+			<div class="hidden md:block h-full border-l ml-16 border-black">
+				<div class="p-4 relative top-0 sidenav">
+					<div class="overflow-auto">
+					<p class="b-subhead">In this article</p>
+					<div class="text-lg">
+						<ul class="px-2 space-y-2" id="links">
+						</ul>
+					</div>
+					<p class="b-subhead">Coming soon</p>
+					<div class="border border-black m-2 w-[300px] cursor-pointer mx-auto p-2 group hover:shadow-[10px_10px_0px_0px_black] transition-all duration-300 ease-in-out">
+						<img src="https://1000marcas.net/wp-content/uploads/2021/06/Django-Logo.png" alt="" class="h-[200px] w-auto mx-auto">
+						<h3 class="text-2xl font-bold font-serif py-2 group-hover:underline">Getting started with Django</h3>
+						<p class="b-body text-base">{% lorem 15 w %}...</p>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END MAIN -->
+	</body>
+    <script src="https://unpkg.com/shiki"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+	<script src="{% static 'js/outdent.js' %}"></script>
+	<script src="{% static 'js/blog.js' %}"></script>
+</html>
