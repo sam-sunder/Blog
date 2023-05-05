@@ -77,14 +77,14 @@
 			<p class="text-6xl font-bold text-center">Latest Posts</p>
 		</div> -->
 			{% for post in page.get_children %}
-			<div class="grid grid-cols-2 mx-5 py-10 md:mx-20 max-w-7xl xl:mx-auto cursor-pointer hover:hadow-[10px_10px_0px_0px_black] border-black shadow-black main-blog" onclick="window.location.href= '{% pageurl post %}';">
-				<div class="w-full h-[60vh] max-h-[40rem] transition-shadow duration-300 mx-auto border-r border-black">
+			<div class="grid grid-rows-2 md:grid-rows-1 md:grid-cols-2 mx-5 py-10 md:mx-20 max-w-7xl xl:mx-auto cursor-pointer hover:hadow-[10px_10px_0px_0px_black] border-black shadow-black main-blog" onclick="window.location.href= '{% pageurl post %}';">
+				<div class="w-full max-h-[60vh] max-h-[40rem] transition-shadow duration-300 mx-auto md:border-r border-black">
 					<div class="flex justify-center items-center flex-col w-full h-full">
-						<img src="{{ post.specific.image.url }}" alt="" class="md:max-h-[60vh] block m-auto object-contain p-4 max-w-lg">
-						<div class="w-full h-12"></div>
+						<img src="{{ post.specific.image.url }}" alt="" class="md:max-h-[60vh] block m-auto object-contain p-4 lg:max-w-lg w-full">
+						<div class="w-full md:h-12"></div>
 					</div>
 				</div>
-				<div class="max-w-5xl md:mx-auto w-full px-8 py-4">
+				<div class="max-w-5xl md:mx-auto w-full px-8 md:py-4">
 					<div class="flex pt-4 space-x-1 text-gray-500">
 						<time datetime="{{post.last_published_at|date}}"> {{post.last_published_at|date}} </time>
 						<span aria-hidden="true"> · </span>
