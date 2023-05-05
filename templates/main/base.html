@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Using Tailwind Css With Django Web Framework. | SolmanRaj Blogs</title>
+    <link rel="stylesheet" href="{% static 'css/tailwind.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-dracula.min.css">
+</head>
+<body>
+    <!-- NAVIGATION -->		  
+		<nav class="bg-white border-gray-200 px-6 lg:px-8 py-2 rounded dark:bg-gray-900">
+			<div class="container flex flex-wrap items-center justify-between mx-auto max-w-7xl">
+				<a href="/" class="flex items-center">
+					<span
+						class="self-center font-serif text-xl font-semibold whitespace-nowrap dark:text-white"
+						>SolmanRaj</span
+					>
+				</a>
+				<div class="flex md:order-2">
+					<button type="button" class="btn-black">Contact us</button>
+					<button
+						data-collapse-toggle="navbar-cta"
+						type="button"
+						class="inline-flex items-center p-2 text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+						aria-controls="navbar-cta"
+						aria-expanded="false">
+						<span class="sr-only">Open main menu</span>
+						<svg
+							class="w-6 h-6"
+							aria-hidden="true"
+							fill="currentColor"
+							viewBox="0 0 20 20"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								fill-rule="evenodd"
+								d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+								clip-rule="evenodd"></path>
+						</svg>
+					</button>
+				</div>
+				<div
+					class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+					id="navbar-cta">
+					<ul
+						class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:font-sans md:text-black md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+						<li>
+							<a href="/" class="nav-link active">Home</a>
+						</li>
+						<!-- <li>
+							<a href="#" class="nav-link">Services</a>
+						</li>
+						<li>
+							<a href="#" class="nav-link">About</a>
+						</li>
+						<li>
+							<a href="#" class="nav-link">Contact</a>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="w-full h-[1px] bg-gray-600"></div>
+		<!-- END NAVIGATION -->
+        <!-- CONTENT -->
+        {% block content %}
+        {% endblock %}
+        <!-- END CONTENT -->
+</body>
+<script src="https://unpkg.com/shiki"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script src="{% static 'js/outdent.js' %}"></script>
+<script src="{% static 'js/blog.js' %}"></script>
+</html>

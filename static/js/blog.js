@@ -12,6 +12,7 @@ shiki.getHighlighter({
 .then(highlighter => {
     $(".b-code").each( function () {
         var code = highlighter.codeToHtml(removeExtraIndentation($(this).text()), { lang: $(this).attr("data-lang") });
+        // var code = highlighter.codeToHtml($(this).text(), { lang: $(this).attr("data-lang") });
         this.innerHTML = code;
     });
 })
@@ -25,7 +26,6 @@ $(".p-link").each(function () {
 var sidenav_static = false;
 $(window).on('scroll', function() {
     if (($(window).scrollTop() >= $('.sidenav').offset().top + $('.sidenav').outerHeight() - window.innerHeight) && (!sidenav_static)) {
-        console.log("---------")
         $(".sidenav").css("position", "sticky");
         $(".sidenav").css("top", "-"+($('.sidenav').outerHeight() - window.innerHeight)+"px");
         sidenav_static = true
