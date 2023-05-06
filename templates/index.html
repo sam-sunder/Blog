@@ -29,7 +29,7 @@
 						class="btn-black">
 						Contact us
 					</button>
-					<button
+					<!-- <button
 						data-collapse-toggle="navbar-cta"
 						type="button"
 						class="inline-flex items-center p-2  text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
@@ -47,7 +47,7 @@
 								d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
 								clip-rule="evenodd"></path>
 						</svg>
-					</button>
+					</button> -->
 				</div>
 				<div
 					class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
@@ -77,21 +77,21 @@
 			<p class="text-6xl font-bold text-center">Latest Posts</p>
 		</div> -->
 			{% for post in page.get_children %}
-			<div class="grid grid-rows-2 md:grid-rows-1 md:grid-cols-2 mx-5 py-10 md:mx-20 max-w-7xl xl:mx-auto cursor-pointer hover:hadow-[10px_10px_0px_0px_black] border-black shadow-black main-blog" onclick="window.location.href= '{% pageurl post %}';">
-				<div class="w-full max-h-[60vh] max-h-[40rem] transition-shadow duration-300 mx-auto md:border-r border-black">
-					<div class="flex justify-center items-center flex-col w-full h-full">
-						<img src="{{ post.specific.image.url }}" alt="" class="md:max-h-[60vh] block m-auto object-contain p-4 lg:max-w-lg w-full">
+			<div class="flex flex-col md:flex-row mx-5 md:py-10 max-w-7xl xl:mx-auto cursor-pointer hover:hadow-[10px_10px_0px_0px_black] border-black shadow-black main-blog lg:max-h-[25rem]" onclick="window.location.href= '{% pageurl post %}';">
+				<div class="w-full transition-shadow duration-300 mx-auto md:border-r border-black p-4">
+					<div class="md:flex justify-center items-center flex-col md:w-full md:h-full bg-white">
+						<img src="{{ post.specific.image.url }}" alt="Post feature image" class="block object-contain p-4 w-full h-full lg:max-h-[20rem] md:max-h-[15rem]">
 						<div class="w-full md:h-12"></div>
 					</div>
 				</div>
-				<div class="max-w-5xl md:mx-auto w-full px-8 md:py-4">
+				<div class="max-w-5xl md:mx-auto w-full px-8 md:py-4 pb-4 md:pb-0">
 					<div class="flex pt-4 space-x-1 text-gray-500">
 						<time datetime="{{post.last_published_at|date}}"> {{post.last_published_at|date}} </time>
 						<span aria-hidden="true"> · </span>
 						<span> 10 min read </span>
 					</div>
-					<h2 class="font-serif font-bold text-2xl pt-1 underline">{{post.title}}</h2>
-					<p class="text-slate-800 py-2 font-normal text-lg">{{post.specific.card_intro}}</p>
+					<h2 class="font-serif font-bold text-lg lg:text-2xl pt-1 underline">{{post.title}}</h2>
+					<p class="text-slate-800 py-2 font-normal lg:text-lg">{{post.specific.card_intro}}</p>
 				</div>
 			</div>
 			{% endfor %}

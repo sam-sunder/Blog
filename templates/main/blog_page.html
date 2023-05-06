@@ -3,10 +3,41 @@
 {% load wagtailcore_tags %}
 
 {% block body_class %}template-blogpage{% endblock %}
-
+{% block schema %}
+<meta property="og:url" content="https://{{ request.get_host }}{{ request.get_full_path }}" />
+<meta property="og:title" content="{{ page.title }}" />
+<meta property="og:image" content="https://{{ request.get_host }}{{ page.specific.image.url }}" />
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://{{ request.get_host }}{{ request.get_full_path }}"
+      },
+      "headline": "{{ page.title }}",
+      "description": "{{ page.specific.card_intro }}",
+      "image": "https://{{ request.get_host }}{{ page.specific.image.url }}",  
+      "author": {
+        "@type": "Person",
+        "name": "{{page.owner.first_name}} {{page.owner.last_name}}"
+      },  
+      "publisher": {
+        "@type": "Organization",
+        "name": "",
+        "logo": {
+          "@type": "ImageObject",
+          "url": ""
+        }
+      },
+      "datePublished": "{{ page.last_published_at|date:"Y-m-d" }}",
+      "dateModified": "{{ page.last_published_at|date:"Y-m-d" }}"
+    }
+</script>
+{% endblock %}
 {% block content %}
-<div class="grid grid-cols-2 md:grid-cols-3 m-10 max-w-[90rem] mx-auto">
-    <div class="col-span-2 flex flex-col px-4 mx-6">
+<div class="grid grid-cols-2 lg:grid-cols-3 m-10 max-w-[90rem] mx-auto">
+    <div class="col-span-2 flex flex-col md:px-4 mx-6">
         <h1 class="font-serif text-4xl font-bold capitalize">
             {{ page.title }}
         </h1>
@@ -18,7 +49,7 @@
             <span> {{page.owner.first_name}} {{page.owner.last_name}} </span>
         </div>
         <!-- BLOG IMAGE -->
-        <img src="{% static 'img/tailwind+django.png' %}" alt=""
+        <img src="{{ page.specific.image.url }}" alt="feature img"
           class="w-full h-auto shadow-[-5px_5px_0px_0px_black] border border-black my-6 max-w-5xl aspect-video object-contain" />
         <div class="my-6">
             {% for block in page.body %}
@@ -33,7 +64,7 @@
         <p class="b-subhead" id="#atuhor-card">Written By:</p>
         <div class="border border-black p-4 flex gap-8 shadow-[10px_10px_0px_0px_black] flex-col md:flex-row">
             <div class="flex-shrink-0 w-full mb-6 h-44 sm:h-[300px] md:h-32 sm:w-32 sm:mb-0">
-                <img src="{{ page.owner.wagtail_userprofile.avatar.url }}" alt="" class="object-contain w-full h-full rounded">
+                <img src="{{ page.owner.wagtail_userprofile.avatar.url }}" alt="" class="object-contain w-full h-full rounded" loading="lazy">
             </div>
             <div class="flex flex-col">
                 <div>
@@ -68,7 +99,7 @@
             </div>					
         </div>
     </div>
-    <div class="hidden md:block h-full border-l ml-16 border-black">
+    <div class="hidden lg:block h-full border-l xl:ml-16 lg:ml-1 border-black">
         <div class="p-4 relative top-0 sidenav">
             <div class="overflow-auto">
             <p class="b-subhead">In this article</p>
@@ -78,7 +109,7 @@
             </div>
             <p class="b-subhead">Coming soon</p>
             <div class="border border-black m-2 w-[300px] cursor-pointer mx-auto p-2 group hover:shadow-[10px_10px_0px_0px_black] transition-all duration-300 ease-in-out">
-                <img src="https://1000marcas.net/wp-content/uploads/2021/06/Django-Logo.png" alt="" class="h-[200px] w-auto mx-auto">
+                <img src="https://1000marcas.net/wp-content/uploads/2021/06/Django-Logo.png" alt="" class="h-[200px] w-auto mx-auto" loading="lazy">
                 <h3 class="text-2xl font-bold font-serif py-2 group-hover:underline">Getting started with Django</h3>
                 <p class="b-body text-base">{% lorem 15 w %}...</p>
             </div>

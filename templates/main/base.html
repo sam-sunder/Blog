@@ -5,10 +5,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Using Tailwind Css With Django Web Framework. | SolmanRaj Blogs</title>
+    {% include "wagtailseo/meta.html" %}
     <link rel="stylesheet" href="{% static 'css/tailwind.css' %}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-dracula.min.css">
+	{% block schema %} {% endblock %}
 </head>
 <body>
     <!-- NAVIGATION -->		  
@@ -69,6 +70,7 @@
         {% block content %}
         {% endblock %}
         <!-- END CONTENT -->
+		{% include "wagtailseo/struct_data.html" %}
 </body>
 <script src="https://unpkg.com/shiki"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
