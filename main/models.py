@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 from wagtail.models import Page
+from wagtailseo.models import SeoMixin, SeoType
 from wagtail.fields import RichTextField, StreamField
 from wagtail.blocks import RichTextBlock, RawHTMLBlock
 from wagtail.admin.panels import FieldPanel
@@ -17,7 +18,10 @@ class BlogIndexPage(Page):
     ]
 
 
-class BlogPage(Page):
+class BlogPage(SeoMixin, Page):
+    seo_content_type = SeoType.ARTICLE
+    promote_panels = SeoMixin.seo_panels
+
     date = models.DateField("Post date")
     image = models.ImageField(upload_to="blog/")
     card_intro = models.CharField(max_length=300)
